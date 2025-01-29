@@ -29,6 +29,8 @@ const canAccessLevel = async (req, res) => {
         res.status(500).send({ message: "Error checking access", error: error.message });
     }
 };
+
+
 const markLevelAsCompleted = async (req, res) => {
     try {
         const { userId, categoryId, levelNumber } = req.body;
@@ -50,6 +52,8 @@ const markLevelAsCompleted = async (req, res) => {
         res.status(500).send({ message: "Error marking level as completed", error: error.message });
     }
 };
+
+
 const progressReport=async(req,res)=>{
     try{
 const{userId}=req.body;
@@ -92,4 +96,5 @@ res.status(200).json({
         res.status(500).send({ message: "Error fetching progress report", error: error.message });
     }
 }
+
 module.exports = { canAccessLevel, markLevelAsCompleted,progressReport  };
