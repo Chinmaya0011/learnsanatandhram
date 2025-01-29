@@ -3,10 +3,10 @@ const Category = require('../models/Category');
 
 const getSanatanDharmaCategories = async (req, res) => {
     try {
-        const categories = await Category.find({ name: "Sanatan Dharma" });
+        const categories = await Category.find();
 
         if (categories.length === 0) {
-            return res.status(404).json({ message: "No categories found for Learn Sanatan Dharma" });
+            return res.status(404).json({ message: "No categories found" });
         }
 
         res.json(categories);
@@ -14,6 +14,7 @@ const getSanatanDharmaCategories = async (req, res) => {
         res.status(500).send({ message: error.message });
     }
 };
+
 
 const addSanatanDharmaCategory = async (req, res) => {
     try {
