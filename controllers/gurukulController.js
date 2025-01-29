@@ -1,6 +1,5 @@
 const Category = require('../models/Category');
 
-
 const getSanatanDharmaCategories = async (req, res) => {
     try {
         const categories = await Category.find();
